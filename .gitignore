@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+
+# 忽略掉 include 資料夾下的所有 json 檔案 (以防止金鑰上傳)
+include/airflow-gcs-packer.json

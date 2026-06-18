@@ -1,0 +1,16 @@
+[project]
+name = "nyc-taxi-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-core>=1.11.11",
+    "dbt-duckdb>=1.10.1",
+    "duckdb>=1.5.4",
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "jupyter-server>=2.20.0",
+    "nbformat>=5.10.4",
+    "notebook>=7.5.7",
+]

@@ -1,0 +1,11 @@
+version: 2
+
+seeds:
+  - name: taxi_zone_lookup  
+    description: >
+      Taxi zones lookup table mapping LocationID to Borough and Zone.
+
+  - name: payment_type_lookup 
+    description: >
+      Payment type reference data mapping codes to descriptions.
+  

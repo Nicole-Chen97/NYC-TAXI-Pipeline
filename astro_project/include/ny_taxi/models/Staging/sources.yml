@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw_gcs_data
+    database: airflow-workflow-494805 # 你的 GCP 專案 ID
+    schema: taxi_trips       # 這是你在 BigQuery 建立外部表的 Dataset 名稱
+    loader: gcs-bucket-spark-to-bigquery         # 註記這份資料是從 Spark 來的
+
+    tables:
+      - name: ext_yellow_taxi
+      - name: ext_green_taxi  # 這是在 BigQuery 裡的外部表名稱
