@@ -244,6 +244,9 @@ __pycache__/
 *.pyc
 .venv/
 
+# .astro 
+.astro/
+
 # dbt
 analyses/
 dbt_packages/
@@ -266,3 +269,8 @@ dags/
 # Environment
 .env
 .env.*
+
+
+.dockerignore
+.gitignore
+.python-version
