@@ -221,3 +221,48 @@ __marimo__/
 
 # 忽略掉 include 資料夾下的所有 json 檔案 (以防止金鑰上傳)
 include/airflow-gcs-packer.json
+
+*.duckdb
+
+
+
+.git
+.env
+.DS_Store
+airflow_settings.yaml
+__pycache__/
+astro
+.venv
+.astro/standalone/
+airflow-webserver.pid
+webserver_config.py
+airflow.cfg
+airflow.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# dbt
+analyses/
+dbt_packages/
+target/
+logs/
+macros/
+*.duckdb
+snapshots/
+tests/
+airflow-gcs-packer.json
+
+# logs 
+
+# tests 
+dags/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+.env.*
