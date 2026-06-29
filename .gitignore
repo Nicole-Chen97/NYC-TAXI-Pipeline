@@ -261,7 +261,7 @@ airflow-gcs-packer.json
 # logs 
 
 # tests 
-dags/
+tests/dags/
 
 # Jupyter
 .ipynb_checkpoints/
