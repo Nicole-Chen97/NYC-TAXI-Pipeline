@@ -2,14 +2,16 @@
 
 ## Overview :
 ![Revenue](assets/NY_Taxi_Dashboard_Revenue.png)  ![Trips](assets/NY_Taxi_Dashboard_Trips.png)  
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+  <img src="assets/NY_Taxi_Dashboard_Revenue.png" alt="Revenue Dashboard" style="width: 48%;">
+  <img src="assets/NY_Taxi_Dashboard_Trips.png" alt="Trips Dashboard" style="width: 48%;">
+</div>
   - who : This project build a clean end-to-end pipeline to provide NYC taxi …… for …. operation team
   - what :
  
 ---
 
 ## Data:
-#### Dataset Overview :
-    This project uses the publicly available trip record data provided by [New York City Taxi and Limousine Commission (TLC)](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
 
 ### Data:
   - Dataset Overview :
