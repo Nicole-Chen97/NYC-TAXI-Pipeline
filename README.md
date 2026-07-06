@@ -1,20 +1,19 @@
 # 🚕 NYC Taxi Data Pipeline
 
 ## Overview :
-![Revenue](./assets/NY-Taxi Dashboard - Revenue.png)  ![Trips](./assets/NY Taxi Dashboard Trips.png)  
+![Revenue](assets/NY_Taxi_Dashboard_Revenue.png)  ![Trips](assets/NY_Taxi_Dashboard_Trips.png)  
   - who : This project build a clean end-to-end pipeline to provide NYC taxi …… for …. operation team
   - what :
  
 ---
-<<<<<<< HEAD
+
 ## Data:
 #### Dataset Overview :
     This project uses the publicly available trip record data provided by [New York City Taxi and Limousine Commission (TLC)](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
-=======
+
 ### Data:
   - Dataset Overview :
     - This project uses the publicly available trip record data provided by [New York City Taxi and Limousine Commission (TLC)](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
->>>>>>> 2990e065c08fd4f54070ef00241b9e828480293f
     - The dataset contains **trip-level transactional records generated** by taxi operations across New York City and is released on a **monthly** basis.
     - Each trip record includes information such as:
       - Pickup and drop-off timestamps
@@ -59,7 +58,7 @@
 ---
 
 ## System Architecture :
-![Architecture](./assets/NY Taxi Architecture.svg) 
+![Architecture](./assets/NY_Taxi_Architecture.svg) 
 
 ---
 
@@ -210,7 +209,7 @@ This project adopts a layered storage architecture consisting of a Data Lake, Bi
 ----
 
 ## Workflow Design:
-  ![DAG](./assets/NY-Taxi Dag.png) 
+  ![DAG](assets/NY_Taxi_Dag.png) 
   Apache Airflow is used to orchestrate the end-to-end data pipeline.
   The orchestration layer is responsible for coordinating workflow execution across different systems, including Google Cloud Storage, Spark, BigQuery, and dbt.
     
