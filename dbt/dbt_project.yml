@@ -2,11 +2,11 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'ny_taxi'
+name: 'taxi_model'
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'ny_taxi'
+profile: 'taxi_model'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -35,8 +35,6 @@ vars:
 models:
   taxi_model:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
       
     staging:
       +tags: ["taxi"]

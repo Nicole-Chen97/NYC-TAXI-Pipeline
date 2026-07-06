@@ -25,10 +25,14 @@ from pyspark.sql import functions as F
 
 import os
 from pathlib import Path
-current_dir = Path(os.getcwd())
+
+# 1. __file__ 指向 /usr/local/airflow/dags/taxi_dag.py
+# 2. .resolve() 把它變成絕對路徑
+# 3. .parent 拿到 /usr/local/airflow/dags/
+current_dag_file_dir = Path(__file__).resolve().parent.parent
 
 
-KEY_PATH = current_dir.parent.parent / "include" /"airflow-gcs-packer.json"
+KEY_PATH = current_dag_file_dir /"airflow-workflow.json"
 
 appName = "Read parquet raw file from GCS"
 master = "local[*]"
@@ -46,13 +50,13 @@ from cosmos.config import ProfileConfig
 # 定義 dbt 執行設定
 # 容器內的路徑：
 
-DBT_PROJECT_PATH = current_dir.parent.parent / "include" / "ny_taxi"
+DBT_PROJECT_PATH = current_dag_file_dir / "dbt"
 
 
 PROJECT_ID= "airflow-workflow-494805" # 根據Google Cloud Platform project_id
 DATASET_NAME = "taxi_trips"
 
-project_config = ProjectConfig(dbt_project_path=DBT_PROJECT_PATH)
+project_config = ProjectConfig(dbt_project_path=str(DBT_PROJECT_PATH))
 
 # Cosmos 會自動抓取 Airflow 的 Connection
 profile_config = ProfileConfig(
@@ -60,7 +64,7 @@ profile_config = ProfileConfig(
     target_name="dev",
     profile_mapping=GoogleCloudServiceAccountFileProfileMapping(
         conn_id="google_cloud_default", # 你在 Airflow 設定的 GCP 連線
-        profile_args={"project":PROJECT_ID , "dataset": DATASET_NAME},
+        profile_args={"project":PROJECT_ID , "dataset": DATASET_NAME ,"keyfile": str(KEY_PATH)},
     ),
 )
 
@@ -78,7 +82,7 @@ CREDENTIALS_FILE = "airflow-gcs-packer.json"
 CHUNK_SIZE = 8 * 1024 * 1024
 PROJECT_ID= "airflow-workflow-494805" 
 DATASET_NAME = "taxi_trips"
-DOWNLOAD_TO_DIR = "raw_data"
+DOWNLOAD_TO_DIR = current_dag_file_dir /"raw_data"
 
 
 

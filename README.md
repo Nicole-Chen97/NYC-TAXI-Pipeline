@@ -1,13 +1,14 @@
 # 🚕 NYC Taxi Data Pipeline
 
 ## Overview :
+![Revenue](./assets/NY-Taxi Dashboard - Revenue.png)  ![Trips](./assets/NY Taxi Dashboard Trips.png)  
   - who : This project build a clean end-to-end pipeline to provide NYC taxi …… for …. operation team
   - what :
  
 ---
 ## Data:
-  - Dataset Overview :
-    - This project uses the publicly available trip record data provided by [New York City Taxi and Limousine Commission (TLC)](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
+#### Dataset Overview :
+    This project uses the publicly available trip record data provided by [New York City Taxi and Limousine Commission (TLC)](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
     - The dataset contains **trip-level transactional records generated** by taxi operations across New York City and is released on a **monthly** basis.
     - Each trip record includes information such as:
       - Pickup and drop-off timestamps
@@ -52,13 +53,13 @@
 ---
 
 ## System Architecture :
-picture 
+![Architecture](./assets/NY Taxi Architecture.svg) 
 
 ---
 
-## - Data Pipeline :
-- The data pipeline is designed as a monthly batch workflow. It processes NYC TLC trip records from raw data ingestion to analytics-ready tables.
-- Pipeline Steps :
+## Data Pipeline :
+The data pipeline is designed as a monthly batch workflow. It processes NYC TLC trip records from raw data ingestion to analytics-ready tables.
+Pipeline Steps :
   1. Data  Ingestion : 
     - Download raw data in PARQUET format. 
     - Upload raw file to Google Cloud Storage , which is serves as the data lake.
@@ -172,7 +173,7 @@ This project adopts a layered storage architecture consisting of a Data Lake, Bi
   - Mart Layer 
     the mart layer provides analytics-ready datasets optimized for reporting and business analysis.
     
-    """The mart layer is materialized as incremental tables because the TLC dataset is released monthly, allowing only new monthly partitions to be processed instead of rebuilding the entire dataset."""
+    The mart layer is materialized as incremental tables because the TLC dataset is released monthly, allowing only new monthly partitions to be processed instead of rebuilding the entire dataset.
 
     Key responsibilities:
     - Build fact and dimension models
@@ -193,7 +194,7 @@ This project adopts a layered storage architecture consisting of a Data Lake, Bi
     | ------------ | ----------------- | ----------------------------- |
 
 
-  ### Reporting ? 
+  ### Reporting 
   Business-oriented reporting tables are created from mart models to support analytical use cases such as:
   - Airport fee analysis
   - Borough-level transportation analysis
@@ -203,6 +204,7 @@ This project adopts a layered storage architecture consisting of a Data Lake, Bi
 ----
 
 ## Workflow Design:
+  ![DAG](./assets/NY-Taxi Dag.png) 
   Apache Airflow is used to orchestrate the end-to-end data pipeline.
   The orchestration layer is responsible for coordinating workflow execution across different systems, including Google Cloud Storage, Spark, BigQuery, and dbt.
     
