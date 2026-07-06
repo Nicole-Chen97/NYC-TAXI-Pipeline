@@ -6,9 +6,15 @@
   - what :
  
 ---
+<<<<<<< HEAD
 ## Data:
 #### Dataset Overview :
     This project uses the publicly available trip record data provided by [New York City Taxi and Limousine Commission (TLC)](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
+=======
+### Data:
+  - Dataset Overview :
+    - This project uses the publicly available trip record data provided by [New York City Taxi and Limousine Commission (TLC)](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
+>>>>>>> 2990e065c08fd4f54070ef00241b9e828480293f
     - The dataset contains **trip-level transactional records generated** by taxi operations across New York City and is released on a **monthly** basis.
     - Each trip record includes information such as:
       - Pickup and drop-off timestamps
