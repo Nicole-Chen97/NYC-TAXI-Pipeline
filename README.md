@@ -1,13 +1,13 @@
 # 🚕 NYC Taxi Data Pipeline
 
+**English** | [繁體中文](README.zh-TW.md)
+
 ## Overview :
-![Revenue](assets/NY_Taxi_Dashboard_Revenue.png)  ![Trips](assets/NY_Taxi_Dashboard_Trips.png)  
-<div style="display: flex; justify-content: space-between; gap: 10px;">
-  <img src="assets/NY_Taxi_Dashboard_Revenue.png" alt="Revenue Dashboard" style="width: 48%;">
-  <img src="assets/NY_Taxi_Dashboard_Trips.png" alt="Trips Dashboard" style="width: 48%;">
-</div>
-  - who : This project build a clean end-to-end pipeline to provide NYC taxi …… for …. operation team
-  - what :
+<p align="center">
+  <img src="assets/NY_Taxi_Dashboard_Revenue.png" alt="Revenue Dashboard" width="49%">
+  <img src="assets/NY_Taxi_Dashboard_Trips.png" alt="Trips Dashboard" width="49%">
+</p>
+
  
 ---
 
@@ -149,6 +149,8 @@ This project adopts a layered storage architecture consisting of a Data Lake, Bi
 
   The Layered design improves maintainability , data quality , and model reusability while providing a clear  separation of responsibilities across the transformation process.
 
+  ![Schema & Lineage](assets/NY_Taxi_Full_Schema.png)
+
   DBT is used to be as the transformation framework because it provides
     - SQL-based data transformations
     - Dependency management through model references
@@ -179,6 +181,8 @@ This project adopts a layered storage architecture consisting of a Data Lake, Bi
   
   - Mart Layer 
     the mart layer provides analytics-ready datasets optimized for reporting and business analysis.
+
+    ![Star Schema](assets/NY_Taxi_Star_Schema.png)
     
     The mart layer is materialized as incremental tables because the TLC dataset is released monthly, allowing only new monthly partitions to be processed instead of rebuilding the entire dataset.
 
@@ -211,7 +215,9 @@ This project adopts a layered storage architecture consisting of a Data Lake, Bi
 ----
 
 ## Workflow Design:
-  ![DAG](assets/NY_Taxi_Dag.png) 
+  ![DAG Design](assets/NY_Taxi_Dag_Design.png)
+
+  ![DAG Run in Airflow](assets/NY_Taxi_Dag.png)
   Apache Airflow is used to orchestrate the end-to-end data pipeline.
   The orchestration layer is responsible for coordinating workflow execution across different systems, including Google Cloud Storage, Spark, BigQuery, and dbt.
     
